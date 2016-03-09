@@ -14,4 +14,7 @@ public interface CarRepository extends CrudRepository<Car, Long>{
 	
 	@Query("select c from Car c where cli_id = ?")
 	public List<Car> findByClients(long client_id);
+	
+	@Query("select sum(c.price) from Car c where dea_id = ?")
+	public double findTotalSales(long dea_id);
 }

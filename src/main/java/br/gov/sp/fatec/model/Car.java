@@ -23,6 +23,10 @@ public class Car {
 	@JoinColumn(name = "CLI_ID", table = "CAR")
 	private Client client;
 	
+	@ManyToOne(fetch=FetchType.LAZY)
+	@JoinColumn(name = "DEA_ID", table = "CAR")
+	private Dealership dealership;
+	
 	@Column(name = "CAR_PRICE", nullable = false, precision=5, scale=2)
 	private double price;
 	
@@ -66,6 +70,14 @@ public class Car {
 	
 	public void setManufacturer(String manufacturer){
 		this.manufacturer = manufacturer;
+	}
+	
+	public Dealership getDealership(){
+		return dealership;
+	}
+	
+	public void setDealership(Dealership dealership){
+		this.dealership = dealership;
 	}
 	
 }
