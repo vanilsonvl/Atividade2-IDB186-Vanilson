@@ -107,7 +107,7 @@ public class App
 		ServiceSecurity sec = (ServiceSecurity)context.getBean("serviceSecurity");
 
 		try {
-			sec.TransactionalDealership();
+			sec.transactionalDealership();
 		}
 		catch(Exception e) {
 			System.out.println("Erro esperado! Rollback realizado!");			

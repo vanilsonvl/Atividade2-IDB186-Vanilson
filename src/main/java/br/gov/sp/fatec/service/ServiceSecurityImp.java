@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import br.gov.sp.fatec.model.Client;
 import br.gov.sp.fatec.model.Dealership;
 import br.gov.sp.fatec.repository.DealershipRepository;
 
@@ -15,13 +16,13 @@ public class ServiceSecurityImp implements ServiceSecurity{
 
 	@Override
 	@Transactional
-	public void TransactionalDealership(){
+	public void transactionalDealership(){
 		Dealership dealership;
 		dealership = new Dealership();
 		dealership.setName("nome");
 		dealership.setPassword("123");
 		dealershipRepo.save(dealership);
-	}
+	}	
 
 	public void setDealershipRepo(DealershipRepository dealershipRepo){
 		this.dealershipRepo = dealershipRepo;
